@@ -66,7 +66,7 @@
             <bard-source :html="htmlWithReplacedLinks" v-if="showSource" />
         </div>
         <div class="bard-footer-toolbar" v-if="editor && (config.reading_time || config.character_limit)">
-            <div v-if="config.reading_time">{{ readingTime }} {{ __('Reading Time') }}</div>
+            <div v-if="config.reading_time">{{ editor.storage.characterCount.words() }} words | {{ readingTime }} {{ __('Reading Time') }}</div>
             <div v-else />
 
             <div v-if="config.character_limit">{{ editor.storage.characterCount.characters() }}/{{ config.character_limit }}</div>
